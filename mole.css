@@ -3,39 +3,111 @@ body {
     text-align: center;
     background: url("./mario-bg.jpg");
     background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#header-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#game-container {
+    position: relative;
+    width: 600px;
+    height: 600px;
 }
 
 #board {
     width: 540px;
     height: 540px;
-    /* background-color: green; */
-
-    margin: 0 auto;
+    margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
-
     background: url("./soil.png");
     background-size: cover;
     border: 3px solid white;
     border-radius: 25px;
+    position: relative;
 }
 
 #board div {
-    /* board = 540 x 540, divide into 3x3 tiles --> 180 x 180 per div */
-    width: 180px; 
+    width: 180px;
     height: 180px;
     background-image: url("./pipe.png");
     background-size: cover;
 }
 
 #board div img {
-    /* all img tags inside tiles */
     width: 100px;
     height: 100px;
-
     user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+}
+
+/* Top-right scoreboard */
+#scoreboard {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    width: 160px;
+    text-align: left;
+}
+
+#scoreboard h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#top-scores div {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* Restart button in the top-left corner */
+#restart-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #ff5733;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#restart-btn:hover {
+    background-color: #ff2e00;
+}
+
+/* Ensure everything is responsive */
+@media (max-width: 600px) {
+    #game-container {
+        width: 100vw;
+        height: 100vw;
+    }
+    #board {
+        width: 90vw;
+        height: 90vw;
+    }
+    #board div {
+        width: calc(90vw / 3);
+        height: calc(90vw / 3);
+    }
 }

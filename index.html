@@ -8,10 +8,24 @@
     <script src="mole.js"></script>
 </head>
 <body>
-    <h1>Whac a Mole</h1>
-    <h2 id="score">0</h2>
-    <!-- 3x3 -->
+    <div id="header-container">
+        <h1>Whac a Mole</h1>
+        <h2 id="score">0</h2>
+    </div>
+
+    <!-- Scoreboard for top 3 scores (positioned at the top right) -->
+    <div id="scoreboard">
+        <h2>Top Scores</h2>
+        <div id="top-scores">
+            <!-- This will be dynamically populated with the top 3 scores -->
+        </div>
+    </div>
+
+    <!-- 3x3 grid for the game -->
     <div id="board">
     </div>
+
+    <!-- Restart button to restart the game -->
+    <button id="restart-btn" onclick="restartGame()">Restart Game</button>
 </body>
 </html>
