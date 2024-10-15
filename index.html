@@ -1,9 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Whac a Mole</title>
+    <link href="./src/output.css" rel="stylesheet" />
+    <title>Mole Game</title>
   </head>
-  <body></body>
+  <style>
+    body {
+      background-image: url(./mario-bg.jpg);
+      background-size: cover;
+    }
+    #soil {
+      background-image: url(./soil.png);
+      background-size: cover;
+    }
+    .pipe {
+      background-image: url(./pipe.png);
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .mole,
+    .plant {
+      height: 70px;
+      margin-bottom: 40px;
+      cursor: pointer;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+  </style>
+  <body class="w-full object-cover">
+    <div class="flex flex-col items-center relative">
+      <div class="my-4">
+        <h1 class="text-4xl font-bold">Whac a Mole</h1>
+        <p
+          class="bg-white rounded-md shadow-md p-3 mt-1 text-lg font-bold text-center"
+        >
+          Score : <span id="score" class="text-blue-500">00</span>
+        </p>
+      </div>
+      <div
+        id="soil"
+        class="h-[420px] aspect-square rounded-xl border-4 border-white grid grid-cols-3"
+      ></div>
+    </div>
+
+    <!-- game over messege component -->
+    <div
+      id="gameOver"
+      class="absolute -top-52 py-8 px-16 bg-white rounded-lg shadow-lg flex flex-col items-centers items-center left-1/2 -translate-x-1/2 transition-all duration-1000 z-10"
+    >
+      <p id="totalScore" class="text-3xl text-red-400">00</p>
+      <h2 class="text-2xl">Game Over</h2>
+      <button
+        class="bg-blue-600 py-2 px-4 mt-3 rounded-md text-white hover:bg-blue-700"
+      >
+        Play
+      </button>
+    </div>
+    <script src="./mole.js"></script>
+  </body>
 </html>
