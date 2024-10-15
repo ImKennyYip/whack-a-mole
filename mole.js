@@ -105,6 +105,7 @@ function gameOver() {
 function playAgain() {
   interval();
 
+  score = 0;
   let gameOverMessage = document.getElementById("gameOver");
   gameOverMessage.classList.remove("top-1/2", "-translate-y-1/2");
   gameOverMessage.classList.add("-top-52");
